@@ -184,3 +184,10 @@
   background: red;
   color: white;
 }
+
+.saved-recipes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
