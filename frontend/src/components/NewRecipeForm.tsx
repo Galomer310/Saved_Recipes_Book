@@ -41,41 +41,40 @@ const NewRecipeForm: React.FC = () => {
   };
 
   return (
-    <div className="new-recipe-container">
-      <h2>Add a New Recipe</h2>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-        <br />
-        <textarea
-          placeholder="Ingredients (one per line)"
-          value={ingredients}
-          onChange={(e) => setIngredients(e.target.value)}
-          required
-        />
-        <br />
-
-        <textarea
-          placeholder="Instructions"
-          value={instructions}
-          onChange={(e) => setInstructions(e.target.value)}
-          required
-        />
-        <br />
-
-        <button type="submit">Add Recipe</button>
-      </form>
-
-      {/* Button to navigate to saved recipes */}
-      <button onClick={() => navigate("/saved-recipes")}>
-        View Saved Recipes
-      </button>
+    <div className="hero">
+      <div className="hero-content">
+        <h1>Add a New Recipe</h1>
+        {error && <p className="error">{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <textarea
+            placeholder="Ingredients (one per line)"
+            value={ingredients}
+            onChange={(e) => setIngredients(e.target.value)}
+            required
+          />
+          <textarea
+            placeholder="Instructions"
+            value={instructions}
+            onChange={(e) => setInstructions(e.target.value)}
+            required
+          />
+          <button type="submit">Add Recipe</button>
+        </form>
+        {/* Button to navigate to saved recipes */}
+        <button
+          className="view-saved-btn"
+          onClick={() => navigate("/saved-recipes")}
+        >
+          View Saved Recipes
+        </button>
+      </div>
     </div>
   );
 };
