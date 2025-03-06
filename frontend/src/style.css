@@ -1,0 +1,152 @@
+/* Home Page */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+.home-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.home-container button {
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color:rgb(50, 43, 248) ;
+  color: white;
+  border-radius: 5px;
+}
+/* Login Page */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+.auth-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.auth-container button {
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color:rgb(50, 43, 248) ;
+  color: white;
+  border-radius: 5px;
+}
+.auth-container link {
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color:rgb(50, 43, 248) ;
+  color: white;
+  border-radius: 5px;
+}
+
+/* New Recipe Form */
+.new-recipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+.new-recipe-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.new-recipe-container button {
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color:rgb(50, 43, 248) ;
+    color: white;
+    border-radius: 5px;
+}
+.new-recipe-container input {
+    margin-top: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+.new-recipe-container textarea {
+    margin-top: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links .username {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.nav-links button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.nav-links button:hover {
+  background: darkred;
+}
+
+/* Recipe Card */
+.recipe-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.recipe-card input,
+.recipe-card textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.recipe-card button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.recipe-card button:first-of-type {
+  background: blue;
+  color: white;
+}
+
+.recipe-card button:last-of-type {
+  background: red;
+  color: white;
+}
