@@ -7,7 +7,13 @@ import recipeRoutes from "./routes/recipeRoutes";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// ✅ Allow CORS for frontend on Render
+app.use(cors({
+  origin: "https://saved-recipes-book-1.onrender.com", // Change to your frontend URL
+  credentials: true,
+}));
+
 app.use(express.json());
 
 app.use("/auth", userRoutes);
