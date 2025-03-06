@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:3000";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://your-backend.onrender.com";
 
 export const registerUser = async (data: object) => {
   const res = await fetch(`${API_BASE}/auth/register`, {
@@ -26,14 +26,16 @@ interface Recipe {
 export const saveRecipe = async (recipe: Recipe, token: string) => {
   const formattedRecipe = {
     ...recipe,
-    ingredients: Array.isArray(recipe.ingredients) ? recipe.ingredients : recipe.ingredients.split("\n").map((ing) => ing.trim()),
+    ingredients: Array.isArray(recipe.ingredients)
+      ? recipe.ingredients
+      : recipe.ingredients.split("\n").map((ing) => ing.trim()),
   };
 
   const res = await fetch(`${API_BASE}/recipes`, {
     method: "POST",
-    headers: { 
+    headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(formattedRecipe),
   });
@@ -43,7 +45,7 @@ export const saveRecipe = async (recipe: Recipe, token: string) => {
 
 export const getRecipes = async (token: string) => {
   const res = await fetch(`${API_BASE}/recipes`, {
-    headers: { "Authorization": `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${token}` },
   });
 
   return res.json();
@@ -52,9 +54,9 @@ export const getRecipes = async (token: string) => {
 export const updateRecipe = async (recipeId: string, updatedRecipe: object, token: string) => {
   const res = await fetch(`${API_BASE}/recipes/${recipeId}`, {
     method: "PUT",
-    headers: { 
+    headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(updatedRecipe),
   });
@@ -65,7 +67,7 @@ export const updateRecipe = async (recipeId: string, updatedRecipe: object, toke
 export const deleteRecipe = async (recipeId: string, token: string) => {
   const res = await fetch(`${API_BASE}/recipes/${recipeId}`, {
     method: "DELETE",
-    headers: { "Authorization": `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${token}` },
   });
 
   return res.json();
